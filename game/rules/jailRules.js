@@ -1,3 +1,5 @@
+import { markPlayerBankrupt } from "./handlers/bankruptHandler.js";
+
 const JAIL_FINE = 50;
 const JAIL_TILE_ID = 10;
 const MAX_FAILED_JAIL_ROLLS = 3;
@@ -83,17 +85,4 @@ export function sendCurrentPlayerToJail(game) {
 function releasePlayerFromJail(player) {
   player.isInJail = false;
   player.failedJailRolls = 0;
-}
-
-function markPlayerBankrupt(game, player) {
-  player.isBankrupt = true;
-
-  for (const tile of game.board) {
-    if (tile.ownerId === player.id) {
-      tile.ownerId = null;
-    }
-  }
-
-  player.propertyIds = [];
-  console.log(`${player.name} is bankrupt and out of the game.`);
 }
