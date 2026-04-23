@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { jailRules } from "../game/rules/jailRules.js";
+import { jailRules } from "../game/rules/handlers/handleJailRules.js";
 import { locationRules } from "../game/rules/locationRules.js";
 import { createTestGame } from "./helpers/createTestGame.js";
 

@@ -1,5 +1,5 @@
 import { movePlayer } from "./movePlayer.js";
-import { jailRules } from "./rules/jailRules.js";
+import { jailRules } from "./rules/handlers/handleJailRules.js";
 
 export function playRound(game) {
   const turnsToPlay = game.countActivePlayers();

@@ -1,4 +1,4 @@
-import { markPlayerBankrupt } from "./handlers/bankruptHandler.js";
+import { goBankrupt } from "./handleGoBankrupt.js";
 
 const JAIL_FINE = 50;
 const JAIL_TILE_ID = 10;
@@ -52,7 +52,7 @@ export function jailRules(game) {
   releasePlayerFromJail(player);
 
   if (player.money < JAIL_FINE) {
-    markPlayerBankrupt(game, player);
+    goBankrupt(game, player);
     return {
       canMove: false,
       roll: null,
